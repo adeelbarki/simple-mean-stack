@@ -1,10 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { InputUserDataFormComponent } from './input-user-data-form/input-user-data-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { DisplayUserDataComponent } from './display-user-data/display-user-data.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: InputUserDataFormComponent
+  },
+  {
+    path: 'user/:uid',
+    component: DisplayUserDataComponent
+  }
+];
+
 
 @NgModule({
   declarations: [
@@ -15,7 +29,8 @@ import { DisplayUserDataComponent } from './display-user-data/display-user-data.
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
