@@ -37,7 +37,7 @@ export class InputUserDataFormComponent implements OnInit {
     this.userForm = this.formBuilder.group({
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
-      email_name: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       zipcode: ['', [Validators.required, Validators.pattern('^[0-9]{5}(?:-[0-9]{4})?$')]],
       password: ['', [Validators.required, Validators.minLength(5), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]]
     });
